@@ -1,14 +1,17 @@
-const mongoose = require('mongoose')
+const mongoose = require("mongoose");
 
-mongoose.Promise = Promise
+mongoose.Promise = Promise;
 
-mongoose.connect('mongodb://localhost/nasa', { useNewUrlParser: true })
-.then((conn) => {
-	console.log(`connected to mongodb on ${conn.connections[0].name} db`)
-})
-.catch(err => {
-	console.error(err)
-})
+let mongoURI = "";
 
+if (process.env.NODE_ENV === "production") {
+    mongoURI = process.env.DB_URL;
+  } else {
+    mongoURI = "mongodb://localhost/nasa";
+  }
 
-module.exports = mongoose
+mongoose.connect(mongoURI, {useNewUrlParser: true}).then(instance => {
+    console.log(`Connected to db ${instance.connections[0].name}`)
+}).catch(err => console.log("Connection Failed.", err));
+
+module.exports = mongoose;
