@@ -1,0 +1,1 @@
+amaterueuurAstronometr.AmateurAstronomeramateurAstronomer amateurAstronomerSchemaamateurAstronomerSchema)}}0)
