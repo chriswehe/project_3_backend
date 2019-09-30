@@ -2,7 +2,7 @@ const apodJsonData = require('./data/apod.json');
 const marsRoverJsonData = require('./data/marsRover.json');
 
 const APOD = require('../models/apod');
-const MarsRoverPhoto = require('../models/');
+const MarsRoverPhoto = require('../models/marsRover');
 
 APOD.deleteMany({}).then(() => {
     APOD.create(apodJsonData).then((photos) => {

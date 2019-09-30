@@ -1,5 +1,8 @@
 const express = require("express");
 const router = express.Router();
 
-const apodController = require("../controllers/marsRover");
+const roverController = require("../controllers/marsRover");
 
+router.get('/', roverController.index)
+
+module.exports = router;

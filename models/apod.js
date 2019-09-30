@@ -10,6 +10,6 @@ const apodSchema = new Schema({
     url: String
 })
 
-const apod = mongoose.model("APOD", apodSchema)
+const APOD = mongoose.model("APOD", apodSchema)
 
-module.exports = apod
+module.exports = APOD
