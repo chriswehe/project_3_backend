@@ -6,6 +6,14 @@ module.exports = {
       res.json(photo)
     });
   },
+  showTitle: (req, res) => {
+    AmateurAstronomer.findOne({
+        title: req.params.title
+    })
+    .then(card => {
+        res.json(card)
+    })
+  },
   create: (req, res) => {
     const newAstronomer = req.body;
     
