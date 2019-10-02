@@ -12,7 +12,8 @@ const roverPhotoSchema = new Schema ({
 	rover: {
 		name: String,
 		landing_date: String
-	}
+	},
+	id: Number
 })
 
 const RoverPhoto = mongoose.model("RoverPhoto", roverPhotoSchema)
