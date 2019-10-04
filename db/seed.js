@@ -3,6 +3,7 @@ const marsRoverJsonData = require('./data/marsRover.json');
 
 const APOD = require('../models/apod');
 const MarsRoverPhoto = require('../models/marsRover');
+const AmateurPhoto = require('../models/amateurAstronomer')
 
 APOD.deleteMany({}).then(() => {
     APOD.create(apodJsonData).then((photos) => {
@@ -15,3 +16,5 @@ MarsRoverPhoto.deleteMany({}).then(() => {
         console.log(photos)
     }).catch(err => console.log(err))
 }).catch(err => console.log(err))
+
+AmateurPhoto.deleteMany({})
